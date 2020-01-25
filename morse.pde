@@ -19,6 +19,8 @@ void morseTranslate(String txt) {
   
     char c = txt.charAt(i);         // get the character
     
+    // TODO: Check if character is space, careful that it doesn't get stored in HashMap (so it doesn't get computed in the Entropy etc)
+    
     if(c >= 65 && c <= 90){         // check if character is lowercase using ASCII 
       msg[i]=morseChar[c-65];       // get the morse code for the char by shifting the ASCII by 65 (since a in ASCII is 65)
     }else if(c >= 97 && c <= 122){  // if not lower, check if uppercase
