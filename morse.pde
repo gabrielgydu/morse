@@ -54,8 +54,7 @@ void morseTranslate(String txt) {
     
     //// Berechnung Wortlänge, Entropie, Redundanz 
     
-    float H=0, L=0;
-    float pi=0;
+    float H=0, L=0, pi=0, mclength=0;
 
     for(Map.Entry c : map.entrySet()){ // for each map entry c
       String s = c.getKey().toString(); // gets key i.e. morse code for the character //<>// //<>//
@@ -65,10 +64,13 @@ void morseTranslate(String txt) {
       println(s+": "+"pi= "+pi);
 
       L += pi * s.length();
-      println("L= "+L);
-      H += (-1)*pi * (log(pi)/log(2)); //<>//
-      println("H= "+H);
+      //println("L= "+L);
+      
+      mclength += s.length()* freq ;
+      //H += (-1)*pi * (log(pi)/log(2)); //<>//
+      //println("H= "+H);
     }
+    H += txt.length()/mclength;
     println("L="+ L +"\n H:"+ H + "\n R = "+ (L-H));
     morse.setText(msg); //<>//
     
