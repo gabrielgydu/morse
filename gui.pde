@@ -33,7 +33,7 @@ public void createGUI(){
   G4P.setMouseOverEnabled(false);
   surface.setTitle("Sketch Window");
   input = new GTextField(this, 20, 10, 560, 40, G4P.SCROLLBARS_NONE);
-  input.setText("Schreiben Sie ihre Nachricht hier.");
+  input.setText("[ Text Eingabe ]");
   input.setLocalColorScheme(GCScheme.CYAN_SCHEME);
   input.setOpaque(true);
   input.addEventHandler(this, "input_change1");
@@ -42,8 +42,13 @@ public void createGUI(){
   button1.setLocalColorScheme(GCScheme.CYAN_SCHEME);
   button1.addEventHandler(this, "button1_click1");
   morse = new GTextArea(this, 20, 70, 560, 110, G4P.SCROLLBARS_NONE);
+  morse.setText("[ Morse Übersetzung]");
   morse.setLocalColorScheme(GCScheme.CYAN_SCHEME);
   morse.setOpaque(true);
+  result = new GLabel(this, 20, 190, 250, 70);
+  result.setTextAlign(GAlign.CENTER, GAlign.MIDDLE);
+  result.setLocalColorScheme(GCScheme.CYAN_SCHEME);
+  result.setOpaque(false);
 }
 
 // Variable declarations 
@@ -51,3 +56,4 @@ public void createGUI(){
 GTextField input; 
 GButton button1; 
 GTextArea morse; 
+GLabel result; 
